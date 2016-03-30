@@ -1,2 +1,4 @@
 # Dakota_Practice
 Using the Program Dakota to Optimize Model of Heat Diffusion
+
+So I tried to take the python code from Greg Tucker and "translate" it into matlab. However, there seem to be several difficulties. First of all I'm not sure what the "sys" package equivalent is in matlab. Without it it does not seem possible to have "argv" which would go into dprepro. Second the error itself which it shows (line 20) is from the "dakota_analysis.mat.in.txt" file. There I changed the line 'python ./my_model.py' to ?matlab ./my_model.m?. However, I'm not sure that this is correct. The dakota_analysis.mat.in.txt file is very sensitive to changes. For example, when I change coefficient (line 15) to something else and then change it back it will continue to show an error.
