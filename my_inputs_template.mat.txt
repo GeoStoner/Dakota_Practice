@@ -1,0 +1,4 @@
+{coefficient}
+
+# Note: the line "{coefficient}" will be replaced by an actual number
+

@@ -1,0 +1,28 @@
+# Simple example of using Dakota to do a parameter study of a Python model that simply
+# solves the equation y = a x^1/2
+#
+# Call with:
+#   $ dakota -i dakota_analysis.in -o dakota_run.out &> run.log
+
+# There are num_steps + 1 = 7 evaluations.
+method
+  vector_parameter_study
+    final_point = 14.0
+    num_steps = 10
+
+variables
+  continuous_design = 1
+    descriptors   'coefficient'
+    initial_point  5.0
+
+interface
+  fork
+    analysis_driver = ‘matlab ./my_model.m’ # must be executable
+    parameters_file = 'params.in'
+    results_file = 'results.out'
+
+responses
+  response_functions = 1
+  no_gradients
+  no_hessians
+
